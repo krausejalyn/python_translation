@@ -7,8 +7,17 @@
 # Code made by Jalyn Krause from Lauren Laufmans's Mathmatica file 'AstroModels.nb'
 # Edited by Jalyn Krause on 30 July 2019 - PRESENT
 
-# USES ARBITRARY LOCATION MODEL
+# USES ARBITRARY LOCATION MODEL (APPROACH 1)
 
+# Our objective is to measure the transmission of galaxy light through the dust clouds. 
+# We work to do this at each position (x,y) in the dusty region of the image.
+# We need to know the observed intensity, I, which we measure. 
+# We also need an estimate of the unobscured intensity, I0, to derive the transmission. Tr(lambda) = I(lambda)/I0(lambda)
+# We assume the galaxy is symmetric and that the outer dust plume only obscures half of the galaxy. 
+# This amounts to saying the galaxy disk is tilted and we only observe dust in absorption from the side that is towards us.
+# A similar feature exists on the back side of the galaxy but as it is behind most of the starlight, it produces little absorption.
+# Lauren cut the galaxy image in half, aligned the two halves, and took the ratio to give us Tr(lambda, x, y).
+# k(lambda) is known for our extinction curve
 
 # In[85]:
 
@@ -416,7 +425,9 @@ fig = plt.pyplot.figure(figsize = (11,8))
 # Normalized v = 0.3, Connects lines to see crossovers in transmission
 matplotlib.pyplot.plot([v, i, j], [[0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3], i2_i, i2_j], marker='o',  linestyle='dashed')
 
+
 # In[ ]:
+
 
 matplotlib.pyplot.title('Transmitted Light vs. Wavelength (Region 2)')
 matplotlib.pyplot.xlabel('Wavelength (Microns) (V, I, J bands)')
@@ -428,7 +439,9 @@ print('V = ', i2_v, 'NORMALIZED TO 0.3')
 print('I = ', i2_i)
 print('J = ', i2_j)
 
+
 # In[ ]:
+
 
 # PLOTS FOR 3ND CHUNK OF DATA
 
@@ -466,7 +479,9 @@ print('V = ', i3_v, 'NORMALIZED 0.3')
 print('I = ', i3_i)
 print('J = ', i3_j)
 
+
 # In[ ]:
+
 
 # PLOTS ALL DATA FROM THE TRANSMISSION DATA FOR EACH REGION ON THE SAME DIAGRAM
 
@@ -497,7 +512,6 @@ matplotlib.pyplot.ylim((0.,1.))
 matplotlib.pyplot.legend(loc=4)
 fig.show()
 
-
 print('V_one = ', i1_v)
 print('I_one = ', i1_i)
 print('J_one = ', i1_j)
@@ -510,13 +524,17 @@ print('V_three = ', i3_v)
 print('I_three = ', i3_i)
 print('J_three = ', i3_j)
 
+
 # In[ ]:
+
 
 # Edited by Jalyn Krause on 20 May 2020 - PRESENT
 
 # USES UNIFORM COLOR MODEL (APPROACH 2)
 
+
 # In[ ]:
+
 
 # We assume that the galaxy has a uniform color.
 # Thus we are saying, I0(lambda1, x, y)/I0(lambda2, x, y) ~ constant = Iratio(lambda1,lambda2).
@@ -535,7 +553,9 @@ print('J_three = ', i3_j)
 # The resampled and psf-corrected TrColor images are the zw049*trans_ratio*psf.fits in UW Box in a new directory, ColorMaps.
 # The zw049*_norm files contain ratios of images where the unobscured stellar background ratio has been set to 1.0+/-~0.05. These ten give us multiple estimates of TrColor.
 
+
 # In[ ]:
+
 
 # PLOTS TRANSMISSION RATIOS FOR ALL REGIONS
 
