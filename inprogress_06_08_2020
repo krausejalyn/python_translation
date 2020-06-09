@@ -379,8 +379,190 @@ fig.show()
 
 matplotlib.show() # displays plot(s) on screen (NON JUPYTER
 
-#line1, = matplotlib.pyplot.plot([1, 2, 3], label="REGION 1 -- DASHED BLUE LINE", color='b', linestyle='dashed')
-#line2, = matplotlib.pyplot.plot([3, 2, 1], label="REGION 2 -- DASHED DOT RED LINE", color='r', linestyle='dashdot')
-#line3, = matplotlib.pyplot.plot([2, 2, 2], label="REGION 3 -- DOTTED GREEN LINE", color='g', linestyle='dotted')
+print('V = ', i1_v, 'NORMALIZED TO 0.3')
+print('I = ', i1_i)
+print('J = ', i1_j)
+
+#for i in range(0, len(i1_v)):
+#matplotlib.pyplot.annotate(i1_v[i], (v[i], i1_v[i]))
+
+fig.show()
+
+# PLOTS FOR 2ND CHUNK OF DATA
+
+# ARRAYS HOLD TRANSMISSION VALUES DERIVED FROM LAUREN'S PLOTS ABOVE
+
+i2_v = [0.3795, 0.3865, 0.3919, 0.3651, 0.3203, 0.3374, 0.2898, 0.3258, 0.3467]
+i2_i = [0.7132, 0.7223, 0.6805, 0.6953, 0.6464, 0.6425, 0.6391, 0.6732, 0.6761]
+i2_j = [0.8054, 0.8373, 0.8188, 0.8195, 0.7896, 0.8144, 0.8191, 0.8092, 0.7924]
+
+# EACH WAVELENGTH BAND (V = 555nm, I = 814nm, J = 1250nm)
+
+v = [0.555,0.555,0.555,0.555,0.555,0.555,0.555,0.555,0.555]
+i = [0.814,0.814,0.814,0.814,0.814,0.814,0.814,0.814,0.814]
+j = [1.250,1.250,1.250,1.250,1.250,1.250,1.250,1.250,1.250]
+
+# PLOTS FIG
+
+fig = plt.pyplot.figure(figsize = (11,8))
+
+# Plots data from Lauren's plots above
+#matplotlib.pyplot.scatter(v, i2_v, edgecolor='black', label="V = [0.3795, 0.3865, 0.3919, 0.3651, 0.3203, 0.3374, 0.2898, 0.3258, 0.3467]")
+#matplotlib.pyplot.scatter(i, i2_i, edgecolor='black', label="I = [0.7132, 0.7223, 0.6805, 0.6953, 0.6464, 0.6425, 0.6391, 0.6732, 0.6761]")
+#matplotlib.pyplot.scatter(j, i2_j, edgecolor='black', label="J = [0.8054, 0.8373, 0.8188, 0.8195, 0.7896, 0.8144, 0.8191, 0.8092, 0.7924]")
+
+#matplotlib.pyplot.legend(loc = 4)
+
+# Normalized v = 0.3, Connects lines to see crossovers in transmission
+matplotlib.pyplot.plot([v, i, j], [[0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3], i2_i, i2_j], marker='o',  linestyle='dashed')
 
 # In[ ]:
+
+matplotlib.pyplot.title('Transmitted Light vs. Wavelength (Region 2)')
+matplotlib.pyplot.xlabel('Wavelength (Microns) (V, I, J bands)')
+matplotlib.pyplot.ylabel('Trans.')
+matplotlib.pyplot.ylim((0.,1.))
+fig.show() 
+
+print('V = ', i2_v, 'NORMALIZED TO 0.3')
+print('I = ', i2_i)
+print('J = ', i2_j)
+
+# In[ ]:
+
+# PLOTS FOR 3ND CHUNK OF DATA
+
+i3_v = [0.2894, 0.3244, 0.3487, 0.4144, 0.4668, 0.3226, 0.2603, 0.2895, 0.2550, 0.3434]
+i3_i = [0.4487, 0.5853, 0.6992, 0.8281, 0.8084, 0.4899, 0.4919, 0.5872, 0.4678, 0.5532]
+i3_j = [0.6487, 0.7449, 0.8759, 0.9313, 0.8894, 0.6729, 0.6906, 0.7305, 0.7501, 0.7528]
+
+# EACH WAVELENGTH BAND (V = 555nm, I = 814nm, J = 1250nm)
+
+v = [0.555,0.555,0.555,0.555,0.555,0.555,0.555,0.555,0.555,0.555]
+i = [0.814,0.814,0.814,0.814,0.814,0.814,0.814,0.814,0.814,0.814]
+j = [1.250,1.250,1.250,1.250,1.250,1.250,1.250,1.250,1.250,1.250]
+
+# PLOTTING FIG
+
+fig = plt.pyplot.figure(figsize = (11,8))
+
+# Plots numbers from lauren's plots above
+#matplotlib.pyplot.scatter(v, i3_v, edgecolor='black', label="V = [0.2894, 0.3244, 0.3487, 0.4144, 0.4668, 0.3226, 0.2603, 0.2895, 0.2550, 0.3434]")
+#matplotlib.pyplot.scatter(i, i3_i, edgecolor='black', label="I = [0.4487, 0.5853, 0.6992, 0.8281, 0.8084, 0.4899, 0.4919, 0.5872, 0.4678, 0.5532]")
+#matplotlib.pyplot.scatter(j, i3_j, edgecolor='black', label="J = [0.6487, 0.7449, 0.8759, 0.9313, 0.8894, 0.6729, 0.6906, 0.7305, 0.7501, 0.7528]")
+#matplotlib.pyplot.legend(loc = 4)
+
+
+# Normalized v = 0.3, Connects lines to see crossovers in transmission
+matplotlib.pyplot.plot([v, i, j], [[0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3], i3_i, i3_j], marker='o',  linestyle='dashed')
+
+matplotlib.pyplot.title('Transmitted Light vs. Wavelength (Region 3)')
+matplotlib.pyplot.xlabel('Wavelength (Microns) (V, I, J bands)')
+matplotlib.pyplot.ylabel('Trans.')
+matplotlib.pyplot.ylim((0.,1.))
+fig.show()
+
+print('V = ', i3_v, 'NORMALIZED 0.3')
+print('I = ', i3_i)
+print('J = ', i3_j)
+
+# In[ ]:
+
+# PLOTS ALL DATA FROM THE TRANSMISSION DATA FOR EACH REGION ON THE SAME DIAGRAM
+
+fig = plt.pyplot.figure(figsize = (11,8))
+
+# XDATA 
+v_ten = [0.555,0.555,0.555,0.555,0.555,0.555,0.555,0.555,0.555,0.555]  # ten elements in array
+v_nine = [0.555,0.555,0.555,0.555,0.555,0.555,0.555,0.555,0.555]  # nine elements in array
+i_ten = [0.814,0.814,0.814,0.814,0.814,0.814,0.814,0.814,0.814,0.814]
+i_nine = [0.814,0.814,0.814,0.814,0.814,0.814,0.814,0.814,0.814]
+j_ten = [1.250,1.250,1.250,1.250,1.250,1.250,1.250,1.250,1.250,1.250]
+j_nine = [1.250,1.250,1.250,1.250,1.250,1.250,1.250,1.250,1.250]
+
+
+r_one = matplotlib.pyplot.plot((v_ten,i_ten,j_ten),(i1_v,i1_i,i1_j), marker='o',ms=4, lw=1.25, color='b',  linestyle='dashed')
+r_two = matplotlib.pyplot.plot((v_nine,i_nine,j_nine),(i2_v,i2_i,i2_j), marker='o',ms=4, lw=1.25, color='r', linestyle='dashdot')
+r_three = matplotlib.pyplot.plot((v_ten,i_ten,j_ten),(i3_v,i3_i,i3_j), marker='o',ms=4, lw=1.25, color='g',  linestyle='dotted')
+
+line1, = matplotlib.pyplot.plot([1, 2, 3], label="REGION 1 -- DASHED BLUE LINE", color='b', linestyle='dashed')
+line2, = matplotlib.pyplot.plot([3, 2, 1], label="REGION 2 -- DASHED DOT RED LINE", color='r', linestyle='dashdot')
+line3, = matplotlib.pyplot.plot([2, 2, 2], label="REGION 3 -- DOTTED GREEN LINE", color='g', linestyle='dotted')
+
+matplotlib.pyplot.title('Transmitted Light vs. Wavelength (All Regions)')
+matplotlib.pyplot.xlabel('Wavelength (Microns) (V, I, J bands)')
+matplotlib.pyplot.ylabel('Trans.')
+matplotlib.pyplot.xlim((0.5,1.3))
+matplotlib.pyplot.ylim((0.,1.))
+matplotlib.pyplot.legend(loc=4)
+fig.show()
+
+
+print('V_one = ', i1_v)
+print('I_one = ', i1_i)
+print('J_one = ', i1_j)
+
+print('V_two = ', i2_v)
+print('I_two = ', i2_i)
+print('J_two = ', i2_j)
+
+print('V_three = ', i3_v)
+print('I_three = ', i3_i)
+print('J_three = ', i3_j)
+
+# In[ ]:
+
+# Edited by Jalyn Krause on 20 May 2020 - PRESENT
+
+# USES UNIFORM COLOR MODEL (APPROACH 2)
+
+# In[ ]:
+
+# We assume that the galaxy has a uniform color.
+# Thus we are saying, I0(lambda1, x, y)/I0(lambda2, x, y) ~ constant = Iratio(lambda1,lambda2).
+# We use our assumption that interstellar obscuration increases monotonically as wavelength decreases.
+# In the simplest case, as an example, if a dust cloud is present with optical depth tau(V), I (lambda) = I0(lambda)exp[-k(lambda)*tauV].
+# If we take the ratio of 2 images that are normalized such that the ratio for unobscured stars is set equal to 1, 
+#      i.e,. Iratio0(lambda1,lambda2)=1 then in an obscured location we have TrColor = I(ratio, lambda1, lambda2) = Iratio0 * exp[-(k(lambda1)-k(lambda2)*tauV]
+# Since k(lambda) is known for our extinction curve, we can derive tauV for the cloud.
+# Our data provide TrColor for HST V/I and V/J, and I/J. 
+# We also have HST U/V. It's low signal-to-noise but allows us to find lower levels of obscuration.
+# HST is diffraction limited, so the angular resolution scales as ~1.22 lambda/(aperture diameter) ~0.04 (lambda/555 nm) arcsec for lambda >500 nm. 
+# Thus each image has different resolution. 
+# In addition, the IR F125W image was obtain with a different detector and has larger pixels than the optical CCDs in WFC3.
+# Ralf resampled the images to a common pixel scale using astrodrizzle. 
+# He then smoothed the shorter wavelength images so that their resolution would match that of the lowest angular resolution F125W image.
+# The resampled and psf-corrected TrColor images are the zw049*trans_ratio*psf.fits in UW Box in a new directory, ColorMaps.
+# The zw049*_norm files contain ratios of images where the unobscured stellar background ratio has been set to 1.0+/-~0.05. These ten give us multiple estimates of TrColor.
+
+# In[ ]:
+
+# PLOTS TRANSMISSION RATIOS FOR ALL REGIONS
+
+
+# REGION 1, RATIO TO I
+ri_vi_rat = [v / x for v,x in zip(i1_v,i1_i)]
+ri_ii_rat = [i / x for i,x in zip(i1_i,i1_i)]
+ri_ji_rat = [j / x for j,x in zip(i1_j,i1_i)]
+
+# REGION 1, RATIO TO J
+ri_vj_rat = [v / y for v,y in zip(i1_v,i1_j)]
+ri_ij_rat = [i / y for i,y in zip(i1_i,i1_j)]
+ri_jj_rat = [j / y for j,y in zip(i1_j,i1_j)]
+
+# REGION 1, RATIO TO V
+ri_vv_rat = [v / z for v,z in zip(i1_v,i1_v)]
+ri_iv_rat = [i / z for i,z in zip(i1_i,i1_v)]
+ri_jv_rat = [j / z for j,z in zip(i1_j,i1_v)]
+
+# PLOTTING FIG FOR REGION 1
+r_one_i = matplotlib.pyplot.plot((v_ten,i_ten,j_ten),(ri_vi_rat,ri_ii_rat,ri_ji_rat), marker='o',ms=4, lw=1.25, color='b',  linestyle='dashed')
+r_one_j = matplotlib.pyplot.plot((v_ten,i_ten,j_ten),(ri_vj_rat,ri_ij_rat,ri_jj_rat), marker='o',ms=4, lw=1.25, color='r', linestyle='dashdot')
+r_one_v = matplotlib.pyplot.plot((v_ten,i_ten,j_ten),(ri_vv_rat,ri_iv_rat,ri_jv_rat), marker='o',ms=4, lw=1.25, color='g',  linestyle='dotted')
+
+matplotlib.pyplot.title('Transmitted Light vs. Wavelength (Region 1)')
+matplotlib.pyplot.xlabel('Wavelength (Microns) (V, I, J bands)')
+matplotlib.pyplot.ylabel('Trans.')
+matplotlib.pyplot.xlim((0.5,1.3))
+matplotlib.pyplot.legend(loc=4)
+fig.show()
