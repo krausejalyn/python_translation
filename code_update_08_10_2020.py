@@ -8,6 +8,10 @@
 # Edited by Jalyn Krause on 30 July 2019 - May 2020
 # New code added on by Jalyn Krause May 2020 - 10 Aug. 2020
 
+#######################################################################################
+# THIS CODE WAS UPLOADED AFTER GENERATING PLOTS FOR ORIGINAL REGIONS 4-7 OF ZW049.057
+#######################################################################################
+
 # USES ARBITRARY LOCATION MODEL (APPROACH 1)
 
 # Our objective is to measure the transmission of galaxy light through the dust clouds. 
